@@ -29,7 +29,6 @@ RUN cd /var/www && \
   mv secure-db-connection wordpress/wp-content/mu-plugins && \
   mv sendgrid-email-delivery-simplified wordpress/wp-content/mu-plugins
 COPY wp-config.php /var/www/wordpress
-COPY ensure-env-vars.php /var/www/wordpress
 COPY email-settings.php /var/www/wordpress
 COPY require-plugins.php /var/www/wordpress/wp-content/mu-plugins
 

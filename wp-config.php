@@ -24,6 +24,5 @@ define('WP_HOME', $protocol . $_SERVER['HTTP_HOST']);
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
-require_once(ABSPATH . 'ensure-env-vars.php');
 require_once(ABSPATH . 'email-settings.php');
 require_once(ABSPATH . 'wp-settings.php');
