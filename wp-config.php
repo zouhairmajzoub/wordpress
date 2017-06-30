@@ -11,11 +11,11 @@ define('DB_PASSWORD', $_ENV['DB_PASSWORD']);
 define('MYSQL_SSL_CA', '/etc/aws-ca.pem');
 define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL);
 
-$_SERVER['HTTPS']='on';
-$protocol = 'https';
-if ($_ENV['WP_ENV'] == 'development') {
-	$protocol = 'http';
-	$_SERVER['HTTPS']='off';
+$protocol = 'http';
+$_SERVER['HTTPS']='off';
+if (getenv('NOW_URL')) {
+	$_SERVER['HTTPS']='on';
+	$protocol = 'https';
 }
 
 define('WP_SITEURL', $protocol . '://' . $_SERVER['HTTP_HOST']);
