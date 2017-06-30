@@ -25,12 +25,10 @@ COPY nginx.conf /etc/nginx
 
 # wordpress stuff
 RUN cd /var/www && \
-  mkdir wordpress/wp-content/mu-plugins && \
-  mv secure-db-connection wordpress/wp-content/mu-plugins && \
-  mv sendgrid-email-delivery-simplified wordpress/wp-content/mu-plugins
+  mv secure-db-connection wordpress/wp-content/plugins && \
+  mv sendgrid-email-delivery-simplified wordpress/wp-content/plugins
 COPY wp-config.php /var/www/wordpress
 COPY email-settings.php /var/www/wordpress
-COPY require-plugins.php /var/www/wordpress/wp-content/mu-plugins
 
 WORKDIR /srv
 EXPOSE 3000
